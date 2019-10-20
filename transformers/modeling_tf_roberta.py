@@ -74,10 +74,10 @@ class TFRobertaMainLayer(TFBertMainLayer):
         else:
             input_ids = inputs
 
-        if tf.not_equal(tf.reduce_sum(input_ids[:, 0]), 0):
-            logger.error("A sequence with no special tokens has been passed to the RoBERTa model. "
-                           "This model requires special tokens in order to work. "
-                           "Please specify add_special_tokens=True in your encoding.")
+        # if tf.not_equal(tf.reduce_sum(input_ids[:, 0]), 0):
+        #     logger.error("A sequence with no special tokens has been passed to the RoBERTa model. "
+        #                    "This model requires special tokens in order to work. "
+        #                    "Please specify add_special_tokens=True in your encoding.")
 
         return super(TFRobertaMainLayer, self).call(inputs, **kwargs)
 
